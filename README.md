@@ -1,33 +1,37 @@
-# Portfólio · Luana Almeida
+**English** · [Português](README.pt-BR.md)
 
-Site de uma página só, com rolagem animada que conta a trajetória dela, do começo ao contato.
-HTML, CSS e JavaScript puros, sem build. As animações usam GSAP + ScrollTrigger e Lenis (rolagem suave), já incluídos em `vendor/`.
+# Portfolio · Luana Almeida
 
-## Ver no computador
+A one-page portfolio for a fashion professional. Scrolling tells her career as a story: each project is a chapter with photos and a link to the original post. Plain HTML, CSS and JavaScript, no build step.
+
+## What it does
+
+- **Animated scroll.** GSAP and ScrollTrigger drive the chapters, and Lenis gives smooth scrolling. All three libraries are included in `vendor/`.
+- **Chapters from one template.** Each project is an `<article class="chap">` with a photo collage for one to five images.
+- **Accessible.** Alt text on every image, respects `prefers-reduced-motion`, and the page still works without JavaScript.
+- **Light images.** Photos are WebP.
+
+## Run it
 
 ```bash
 python3 -m http.server 8000
-# abra http://localhost:8000
+# open http://localhost:8000
 ```
 
-Também funciona em qualquer hospedagem estática (GitHub Pages, Netlify, Vercel).
+It also works on any static host (GitHub Pages, Netlify, Vercel).
 
-## Onde editar
+## Edit the content
 
-| O que | Onde |
+| What | Where |
 |---|---|
-| Textos, capítulos, links do Instagram | `index.html` (cada projeto é um `<article class="chap">`) |
-| Links "Ver no Instagram" / "Ver o reel" | o `href` dos `<a class="ig">` dentro de cada capítulo |
-| Fotos | `assets/img/` (WebP). Trocar o arquivo mantém o mesmo nome no HTML |
-| Cores e fontes | variáveis no topo de `css/style.css` (`--or` é o laranja) |
-| Animações | `js/main.js` |
+| Text, chapters, Instagram links | `index.html` (each project is one `<article class="chap">`) |
+| "See on Instagram" and "Watch the reel" links | the `href` of each `<a class="ig">` inside a chapter |
+| Photos | `assets/img/` (WebP; keep the same file name to swap an image) |
+| Colors and fonts | variables at the top of `css/style.css` (`--or` is the orange) |
+| Animations | `js/main.js` |
 
-Para adicionar um novo projeto, copie um `<article class="chap">` inteiro. Use uma das classes `n1` a `n5` no `<div class="collage">` conforme a quantidade de fotos (1 a 5). A classe `flip` inverte o lado do texto.
+To add a project, copy a whole `<article class="chap">`. Use one of the classes `n1` to `n5` on the `<div class="collage">` for the number of photos (1 to 5). The class `flip` puts the text on the other side.
 
-## Privacidade
+## Privacy
 
-Os certificados do catálogo contêm CPF e data de nascimento, por isso **não foram incluídos**. A seção "Formação e cursos" mostra apenas o nome da competência, a instituição e a carga horária.
-
-## Acessibilidade
-
-Respeita `prefers-reduced-motion` (sem animações de rolagem), tem texto alternativo nas imagens e funciona sem JavaScript.
+The certificates in the catalog contain personal ID numbers and birth dates, so they are **not included**. The "Education and courses" section shows only the skill name, the institution and the hours.
